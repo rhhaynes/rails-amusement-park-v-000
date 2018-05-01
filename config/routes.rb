@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   
   root 'static_pages#home'
   
-  get    '/signin',   to: 'session#new',    as: 'signin'
-  post   '/session',  to: 'session#create', as: 'session'
-  delete '/session/', to: 'session#destroy'
+  get    '/signin',  to: 'session#new',    as: 'signin'
+  post   '/session', to: 'session#create', as: 'session'
+  delete '/session', to: 'session#destroy'
   
   get  '/users',          to: 'users#index', as: 'users'
   get  '/users/new',      to: 'users#new',   as: 'new_user'
