@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  
   root 'static_pages#home'
+  
+  get    '/signin',   to: 'session#new',    as: 'signin'
+  post   '/session',  to: 'session#create', as: 'session'
+  delete '/session/', to: 'session#destroy'
+  
   get  '/users',          to: 'users#index', as: 'users'
   get  '/users/new',      to: 'users#new',   as: 'new_user'
   post '/users',          to: 'users#create'
@@ -13,8 +19,6 @@ Rails.application.routes.draw do
   get   '/attractions/:id/edit', to: 'attractions#edit',  as: 'edit_attraction'
   patch '/attractions/:id',      to: 'attractions#update'
   
-  get '/signin', to: 'session#new', as: 'signin'
-  post '/session', to: 'session#create', as: 'session'
-  delete '/session/', to: 'session#destroy'
   post '/rides', to:"rides#create", as: 'rides'
+  
 end
