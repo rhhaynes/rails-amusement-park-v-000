@@ -40,8 +40,9 @@ class AttractionsController < ApplicationController
         :happiness_rating,
         :nausea_rating
       )
-      
+  
   def set_attraction
+    @attraction = Attraction.find_by(id: params[:id])
   end
   end
 end
