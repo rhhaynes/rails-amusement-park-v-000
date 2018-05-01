@@ -41,6 +41,7 @@ class AttractionsController < ApplicationController
         :nausea_rating
       )
       
-      def 
+  def set_attraction
+  end
   end
 end
