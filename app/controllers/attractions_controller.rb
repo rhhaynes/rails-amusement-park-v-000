@@ -30,16 +30,14 @@ class AttractionsController < ApplicationController
   private
   
   def attraction_params
-    params.require(:attraction).permit(
-        :name,
-        :min_height,
-        :tickets,
-        :happiness_rating,
-        :nausea_rating
-      )
+    params.require(:attraction).permit(:name,
+                                       :min_height,
+                                       :tickets,
+                                       :happiness_rating,
+                                       :nausea_rating)
+  end
   
   def set_attraction
     @attraction = Attraction.find_by(id: params[:id])
-  end
   end
 end
