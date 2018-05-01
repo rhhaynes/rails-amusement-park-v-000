@@ -1,4 +1,6 @@
 class AttractionsController < ApplicationController
+  before_action :set_attraction, only: [:show, :edit, :update]
+  
   def index
     @attractions = Attraction.all
   end
@@ -29,6 +31,7 @@ class AttractionsController < ApplicationController
   end
 
   private
+  
   def attraction_params
     params.require(:attraction).permit(
         :name,
@@ -37,5 +40,7 @@ class AttractionsController < ApplicationController
         :happiness_rating,
         :nausea_rating
       )
+      
+      def 
   end
 end
